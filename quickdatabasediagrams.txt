@@ -1,0 +1,35 @@
+# Creating ERD for import to SQL
+titles 
+-
+title_id VarChar PK
+title VarChar
+
+employees
+-
+emp_no Int PK
+emp_title_id VarChar FK - titles.title_id
+birth_date Date
+first_name VarChar
+last_name VarChar
+sex VarChar
+hire_date Date
+
+departments
+-
+dept_no VarChar PK
+dept_name VarChar
+
+dept_manager
+-
+dept_no VarChar PK FK - departments.dept_no
+emp_no INT PK FK - employees.emp_no
+
+dept_emp
+-
+emp_no INT PK FK - employees.emp_no
+dept_no VarChar PK FK - departments.dept_no
+
+salaries
+-
+emp_no INT PK FK - employees.emp_no
+salary INT
